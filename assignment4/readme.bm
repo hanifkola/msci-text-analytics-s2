@@ -1,0 +1,27 @@
+The fully connected feed-forward neural network classifier with keras and tensorflow librarys developed in python. 
+The Word2Vec embeddings which was previously bulit with gensim library fed to the first layer of the network.
+For the first runs model created without the 'softmax' activation funcion. according to the accuracy table bellow 
+accuracy was higher than any other combination. for Sigmond activation was highest with 67.9% and two other activation functions
+have the same accuracy of 57%.By adding the softmax activation function in the last layer, the accuracy surprisngly drroped 
+to 50% for most combinations of the model. Dropout regularization and L2-norm regularization addded to the model, but as it shown in the 
+table, there is a slight difference on accuracy among all variations on these three parameters.(activation function, Dropout and l2-norm)
+All parameters could be set in a config.py file which comes with the main file.
+
+Activation Function	softmax activation	l2 regulator	Droupout	model accuracy
+Sigmoid 		×			×		×		67.98%
+ReLO			×			×		×		57.66%
+tanh			×			×		×		57.25%
+Sigmoid			+			0.001		0.5		50.05%
+ReLO			+			0.001		0.5		49.89%
+tanh			+			0.001		0.5		50.04%
+tanh			+			0.01		0.5		50.01%
+tanh			+			0.1		0.5		50.31%
+tanh			+			0.5		0.5		50.28%
+tanh			+			0.5		0.1		46.83%
+tanh			+			0.5		0.7		50.09%
+tanh			+			0.5		0.9		49.92%
+Sigmoid			+			0.5		0.5		50.08%
+Sigmoid			+			0.1		0.5		50.07%
+Sigmoid			+			0.15		0.5		49.89%
+Sigmoid			+			0.1		0.1		49.83%
+ 
